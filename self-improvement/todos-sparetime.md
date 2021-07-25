@@ -1,0 +1,2 @@
+- take the assessments
+- do the afternoon projects
