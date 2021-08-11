@@ -36,24 +36,3 @@ input {
 img {
 	max-width: 300px;
 }
-
-.fav-button {
-	width: 150px;
-	height: 40px;
-	border-radius: 15px;
-	border: .3px solid gray;
-	color: rgb(71, 163, 224);
-	background-color: #fdee00;
-	/* Extra credit if you used Aureolin */
-}
-
-.fav-button:hover {
-	cursor: pointer;
-}
-
-.radio-holder {
-	display: flex;
-	align-items: flex-start;
-	padding: 6px;
-	margin: 2px;
-}
