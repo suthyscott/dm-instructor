@@ -1,0 +1,59 @@
+body {
+  background: #ddd;
+  margin: 1rem;
+  padding: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: "Open Sans", sans-serif;
+}
+
+nav {
+	border-bottom: 2px solid orange;
+}
+
+ol {
+	padding-left: 0;
+}
+
+.crumb {
+	margin-right: 2em;
+	display: inline;
+}
+
+a {
+	color: orange;
+}
+
+a:visited {
+	color: crimson;
+}
+
+
+input {
+	display: block;
+}
+
+img {
+	max-width: 300px;
+}
+
+.fav-button {
+	width: 150px;
+	height: 40px;
+	border-radius: 15px;
+	border: .3px solid gray;
+	color: rgb(71, 163, 224);
+	background-color: #fdee00;
+	/* Extra credit if you used Aureolin */
+}
+
+.fav-button:hover {
+	cursor: pointer;
+}
+
+.radio-holder {
+	display: flex;
+	align-items: flex-start;
+	padding: 6px;
+	margin: 2px;
+}
