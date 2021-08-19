@@ -60,3 +60,17 @@ SELECT max(birth_date) FROM employee;
 SELECT count(*) FROM invoice
 WHERE billing_state IN ('CA', 'TX', 'AZ');
 
+SELECT avg(total) FROM invoice;
+
+SELECT track_id FROM playlist_track pt
+JOIN playlist p ON pt.playlist_id = p.playlist_id
+WHERE p.name = 'Music';
+
+SELECT t.name FROM track t
+JOIN playlist_track pt ON t.track_id = pt.track_id
+WHERE pt.playlist_id = 5;
+
+SELECT t.name, a.title FROM track t
+JOIN album a ON a.album_id = t.album_id
+JOIN genre g ON g.genre_id = t.genre_id
+WHERE g.name = 'Alternative & Punk';

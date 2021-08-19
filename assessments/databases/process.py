@@ -10,4 +10,20 @@ def sales_reports(log_file):
             print(line)
 
 # Invoking the above function. 
-sales_reports(log_file)
+# sales_reports(log_file)
+
+
+def numbers_reports(log_file):
+    for line in log_file:
+        line = line.rstrip().split(' ')
+        count = int(line[2])
+        # print(count)
+        if count > 10:
+            print(line)
+
+
+
+
+
+
+numbers_reports(log_file)
