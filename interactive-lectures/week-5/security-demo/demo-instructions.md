@@ -29,7 +29,7 @@ Implementing hash encryption:
  - How secure is my password site. Hash generates random strings of characters that are much more secure than a typical password. 
  - We are going to generate salt, which is some random characters that will be added to the hash of your pin. Declare a salt variable with 
  ``` 
- bcrypt.genSaltSync([character limit]).
+ let salt = bcrypt.genSaltSync([character limit]).
  ```
  - Generate the hash by using 
  ``` 
@@ -41,8 +41,21 @@ Implementing hash encryption:
 Now we need to change our loop to account for the hashed pins:
  - Create and “existing” variable that is equal to 
  ```
- bcrypt.compareSync(pin, chat[i].pinHash)
+ for (let i = 0; i < chats.length; i++) {
+          const existing = bcrypt.compareSync(pin, chats[i].pinHash)
+          if (existing) {
+            chats[i].messages.push(message)
+            let messagesToReturn = {...chats[i]}
+            delete messagesToReturn.pinHash
+            res.status(200).send(messagesToReturn)
+            return
+          }
  ```
  - If existing is true, there was a match and we can push the message into the chat.messages array. 
- - We don’t even want to send the hash back to the front end, so rather than send back chats[i] let’s create a new object and delete the pinHas before sending it back. Do the same outside of the for loop.
+ - We don’t even want to send the hash back to the front end, so rather than send back chats[i] let’s create a new object and delete the pinHash before sending it back. Do the same outside of the for loop.
+ ```
+ let messagesToReturn = {...msgObj}
+        delete messagesToReturn.pinHash
+        res.status(200).send(messagesToReturn)
+```
 
